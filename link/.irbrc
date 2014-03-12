@@ -7,3 +7,12 @@ IRB::Irb.class_eval do
     ap @context.last_value
   end
 end
+
+
+begin
+  require "pry"
+  Pry.start
+  exit
+rescue LoadError => e
+  warn "=> Unable to load pry"
+end
